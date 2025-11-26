@@ -1,6 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router';
 import Header from '../Components/Header';
+import LatestNews from '../Components/LatestNews';
 
 const HomeLayout = () => {
     return (
@@ -8,6 +9,9 @@ const HomeLayout = () => {
             <header>
                 <Header></Header>
             </header>
+            <section>
+                <LatestNews></LatestNews>
+            </section>
             <main>
                 <button className='btn btn-primary'>ggggggg</button>
                 <button className='btn btn-secondary'>ggggggg</button>
