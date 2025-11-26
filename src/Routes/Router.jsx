@@ -4,6 +4,9 @@ import HomeLayout from "../Layout/HomeLayout";
 import ErrorPage from "../Pages/ErrorPage";
 import AuthLayout from "../Layout/AuthLayout";
 import JobDetails from "../Pages/JobDetails";
+import ContactUs from "../Pages/ContactUs";
+import SignIn from "../Pages/SignIn";
+import Signup from "../Pages/Signup";
 
 const router = createBrowserRouter([
   {
@@ -11,8 +14,13 @@ const router = createBrowserRouter([
     element: <HomeLayout />,
   },
   {
-    path: "/about-us",
+    path: "/about",
     element: <About />,
+  },
+  {
+    path: "/contactus",
+    element:<ContactUs></ContactUs>
+
   },
   {
     path: "/auth",
@@ -26,6 +34,16 @@ const router = createBrowserRouter([
     path: "/*",
     element: <ErrorPage />,
   },
+  {
+    path: "/signin",
+    element: <SignIn></SignIn> 
+  },
+  {
+    path: "/signup",
+    element: <Signup></Signup> 
+  },
+  {
+  }
 ]);
 
 export default router;
