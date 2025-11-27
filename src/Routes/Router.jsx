@@ -10,8 +10,6 @@ import Home from "../Pages/Home";
 import CompanyDetails from "../Pages/CompanyDetails";
 import Loading from "../Components/Loading";
 
-
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,30 +17,31 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />, 
+        element: <Home />,
       },
+
       {
-        path: "about",
-        element: <About />,
-      },
-      {
-        path: "contactus",
-        element: <ContactUs />,
-      },
-      {
-        path:"/company-details/:id",
-        element:<CompanyDetails></CompanyDetails>,
+        path: "/company-details/:id",
+        element: <CompanyDetails></CompanyDetails>,
         loader: () => fetch("/Companies.json"),
         hydrateFallbackElement: <Loading></Loading>,
-      }
-      
-      
+      },
     ],
   },
 
   {
     path: "/auth",
     element: <AuthLayout />,
+    children: [
+      {
+        path: "/auth/signin",
+        element: <SignIn></SignIn>,
+      },
+      {
+        path: "/auth/signup",
+        element: <Signup></Signup>,
+      },
+    ],
   },
 
   {
@@ -50,12 +49,12 @@ const router = createBrowserRouter([
     element: <ErrorPage />,
   },
   {
-    path: "/signin",
-    element: <SignIn></SignIn>,
+    path: "about",
+    element: <About />,
   },
   {
-    path: "/signup",
-    element: <Signup></Signup>,
+    path: "contactus",
+    element: <ContactUs />,
   },
 ]);
 

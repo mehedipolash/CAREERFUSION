@@ -29,13 +29,13 @@ const Navbar = () => {
             Contact
           </NavLink>
           <NavLink
-            to="/signin"
+            to="/auth/signin"
             className={({ isActive }) => (isActive ? "text-primary" : "")}
           >
             SignIn
           </NavLink>
           <NavLink
-            to="/signup"
+            to="/auth/signup"
             className={({ isActive }) => (isActive ? "text-primary" : "")}
           >
             SignUp
@@ -47,8 +47,8 @@ const Navbar = () => {
           <NavLink to="/">Home</NavLink>
           <NavLink to="/about">About</NavLink>
           <NavLink to="/contactus">Contact</NavLink>
-          <NavLink to="/signin">SignIn</NavLink>
-          <NavLink to="/signup">SignUp</NavLink>
+          <NavLink to="/auth/signin">SignIn</NavLink>
+          <NavLink to="/auth/signup">SignUp</NavLink>
         </div>
       </div>
     </nav>
