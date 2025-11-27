@@ -28,7 +28,7 @@ const CompanyDetails = () => {
         transition={{ duration: 0.5 }}
         className="bg-base-100 p-6 rounded-lg shadow mb-10"
       >
-        <div className="flex flex-col md:flex-row items-center gap-6">
+        <div className="flex flex-col md:flex-row items-center gap-6 justify-center">
           <img
             src={company.logo}
             alt={company.name}

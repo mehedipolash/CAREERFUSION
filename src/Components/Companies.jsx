@@ -3,10 +3,10 @@ import { NavLink } from "react-router";
 const companyPromise = fetch("/Companies.json").then((res) => res.json());
 const Companies = () => {
   const companies = use(companyPromise);
-  console.log(companies);
+  // console.log(companies);
   return (
     <div>
-      <h2 className="text-xl text-center font-bold">All Companies : ({companies.length})</h2>
+      <h2 className="text-xl text-center font-bold">Available Companies</h2>
       <br />
       <div className="grid lg:grid-cols-4 grid-cols-2 mt-5 gap-6">
         {companies.map((company) => (

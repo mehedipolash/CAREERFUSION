@@ -1,6 +1,8 @@
 import React, { Suspense } from "react";
 import Companies from "../Components/Companies";
 import Hero from "../Components/Hero";
+import FAQA from "../Components/FAQA.jsx";
+import CareerTips from "../Components/CareerTips.jsx";
 
 const Home = () => {
   return (
@@ -16,8 +18,12 @@ const Home = () => {
           <Companies></Companies>
         </Suspense>
       </section>
-      <section></section>
-      <section></section>
+      <section>
+        <FAQA></FAQA>
+      </section>
+      <section>
+        <CareerTips></CareerTips>
+      </section>
     </div>
   );
 };

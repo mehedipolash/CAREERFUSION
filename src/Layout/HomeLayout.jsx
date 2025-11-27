@@ -14,20 +14,14 @@ const HomeLayout = () => {
           <LatestNews></LatestNews>
         </section>
         <nav className="w-11/12 mx-auto my-3">
-            <Navbar></Navbar>
+          <Navbar></Navbar>
         </nav>
       </header>
 
-      <main className="w-11/12 mx-auto my-3"> 
+      <main className="w-11/12 mx-auto my-3">
         <Outlet></Outlet>
-        <section>
-          <h2 className="text-accent">custom section</h2>
-        </section>
-        <section>
-          <h2>custom section</h2>
-        </section>
       </main>
-      
+
       <footer>
         <Footer></Footer>
       </footer>
