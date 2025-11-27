@@ -51,7 +51,7 @@ const CareerTips = () => {
   return (
     <section
       ref={ref}
-      className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden"
+      className="py-20  relative overflow-hidden"
     >
       {/* Background decorative elements */}
       <div className="absolute top-10 left-10 w-20 h-20 bg-blue-200 rounded-full blur-xl opacity-30"></div>
@@ -65,7 +65,7 @@ const CareerTips = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-6">
+          <h2 className="text-5xl font-bold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-6">
             Career Success Tips
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -105,7 +105,7 @@ const CareerTips = () => {
                 boxShadow: "0 20px 40px rgba(79, 70, 229, 0.3)",
               }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg"
+              className="bg-linear-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full font-semibold text-lg shadow-lg"
             >
               Get Personalized Career Advice
             </motion.button>
@@ -146,14 +146,14 @@ const TipCard = ({ tip, index }) => {
       <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 relative overflow-hidden h-full">
         {/* Gradient border effect on hover */}
         <div
-          className={`absolute inset-0 bg-gradient-to-r ${tip.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-2xl`}
+          className={`absolute inset-0 bg-linear-to-r ${tip.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-2xl`}
         ></div>
 
         {/* Icon with gradient background */}
         <motion.div
           whileHover={{ rotate: 360 }}
           transition={{ duration: 0.6 }}
-          className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${tip.gradient} flex items-center justify-center text-2xl mb-6 shadow-lg`}
+          className={`w-16 h-16 rounded-2xl bg-linear-to-r ${tip.gradient} flex items-center justify-center text-2xl mb-6 shadow-lg`}
         >
           {tip.icon}
         </motion.div>
@@ -174,7 +174,7 @@ const TipCard = ({ tip, index }) => {
         </motion.div>
 
         {/* Shine effect on hover */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 opacity-20"></div>
+        <div className="absolute inset-0 bg-linear-to-r from-transparent via-white to-transparent translate-x-full group-hover:translate-x-full transition-transform duration-1000 opacity-20"></div>
       </div>
 
       {/* Floating elements */}
@@ -187,7 +187,7 @@ const TipCard = ({ tip, index }) => {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className={`absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r ${tip.gradient} rounded-full opacity-20`}
+        className={`absolute -top-2 -right-2 w-6 h-6 bg-linear-to-r ${tip.gradient} rounded-full opacity-20`}
       ></motion.div>
       <motion.div
         animate={{
@@ -199,7 +199,7 @@ const TipCard = ({ tip, index }) => {
           ease: "easeInOut",
           delay: 1,
         }}
-        className={`absolute -bottom-2 -left-2 w-4 h-4 bg-gradient-to-r ${tip.gradient} rounded-full opacity-20`}
+        className={`absolute -bottom-2 -left-2 w-4 h-4 bg-linear-to-r ${tip.gradient} rounded-full opacity-20`}
       ></motion.div>
     </motion.div>
   );

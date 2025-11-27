@@ -5,10 +5,10 @@ const Companies = () => {
   const companies = use(companyPromise);
   // console.log(companies);
   return (
-    <div>
-      <h2 className="text-xl text-center font-bold">Available Companies</h2>
+    <div className="bg-zinc-200 rounded-lg">
+      <h2 className="text-2xl text-center font-bold underline pt-3">Available Companies</h2>
       <br />
-      <div className="grid lg:grid-cols-4 grid-cols-2 mt-5 gap-6">
+      <div className="grid lg:grid-cols-4 grid-cols-2 mt-5 gap-6 mb-5 w-11/12 mx-auto pb-8">
         {companies.map((company) => (
           <NavLink
             className={
