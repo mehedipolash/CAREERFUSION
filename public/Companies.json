@@ -1,0 +1,767 @@
+[
+  {
+    "id": "1",
+    "name": "Google",
+    "logo": "https://i.ibb.co.com/S4fKn8Dt/google.webp",
+    "location": "Mountain View, CA",
+    "website": "https://www.google.com",
+    "industry": "Technology",
+    "jobs": [
+      {
+        "id": "g-job-001",
+        "title": "Frontend Engineer",
+        "bannerImage": "https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg",
+        "location": "USA (Remote)",
+        "salary": "$120k-$160k",
+        "jobType": "Full-time",
+        "description": "Build UI features used by millions everyday.",
+        "requirements": [
+          "Expert in React and TypeScript",
+          "Experience with UI/UX collaboration",
+          "Strong JavaScript fundamentals",
+          "Familiar with REST APIs"
+        ]
+      },
+      {
+        "id": "g-job-002",
+        "title": "Cloud Solutions Architect",
+        "bannerImage": "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg",
+        "location": "New York, USA",
+        "salary": "$150k-$200k",
+        "jobType": "Full-time",
+        "description": "Design scalable cloud architecture on Google Cloud.",
+        "requirements": [
+          "Strong Kubernetes experience",
+          "Advanced Cloud infrastructure knowledge",
+          "Experience with GCP",
+          "Strong DevOps skills"
+        ]
+      },
+      {
+        "id": "g-job-003",
+        "title": "Data Scientist",
+        "bannerImage": "https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg",
+        "location": "California, USA",
+        "salary": "$130k-$180k",
+        "jobType": "Full-time",
+        "description": "Analyze large datasets and build machine learning models.",
+        "requirements": [
+          "Python and R programming",
+          "Machine learning expertise",
+          "SQL and database knowledge",
+          "Statistical analysis skills"
+        ]
+      },
+      {
+        "id": "g-job-004",
+        "title": "UX Researcher",
+        "bannerImage": "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg",
+        "location": "Remote",
+        "salary": "$110k-$150k",
+        "jobType": "Full-time",
+        "description": "Conduct user research to improve product experiences.",
+        "requirements": [
+          "User research methodologies",
+          "Qualitative and quantitative analysis",
+          "Strong communication skills",
+          "Prototyping and testing experience"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Microsoft",
+    "logo": "https://i.ibb.co.com/JR0dBMDQ/Microsoft-logo-svg.png",
+    "location": "Redmond, WA",
+    "website": "https://www.microsoft.com",
+    "industry": "Software & Cloud",
+    "jobs": [
+      {
+        "id": "ms-job-001",
+        "title": "Software Engineer II",
+        "bannerImage": "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg",
+        "location": "Remote",
+        "salary": "$110k-$150k",
+        "jobType": "Full-time",
+        "description": "Develop high-performance distributed systems.",
+        "requirements": [
+          "Experience in C#, .NET",
+          "Strong algorithms & data structures",
+          "Experience in cloud systems",
+          "Team collaboration"
+        ]
+      },
+      {
+        "id": "ms-job-002",
+        "title": "Azure DevOps Engineer",
+        "bannerImage": "https://images.pexels.com/photos/3861959/pexels-photo-3861959.jpeg",
+        "location": "Seattle, USA",
+        "salary": "$120k-$160k",
+        "jobType": "Full-time",
+        "description": "Manage and optimize Azure cloud infrastructure.",
+        "requirements": [
+          "Azure services expertise",
+          "CI/CD pipeline development",
+          "Infrastructure as Code",
+          "Monitoring and troubleshooting"
+        ]
+      },
+      {
+        "id": "ms-job-003",
+        "title": "Product Manager",
+        "bannerImage": "https://images.pexels.com/photos/3184288/pexels-photo-3184288.jpeg",
+        "location": "Redmond, WA",
+        "salary": "$140k-$190k",
+        "jobType": "Full-time",
+        "description": "Lead product development for Microsoft 365 suite.",
+        "requirements": [
+          "Product management experience",
+          "Agile methodology knowledge",
+          "Stakeholder management",
+          "Data-driven decision making"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Amazon",
+    "logo": "https://i.ibb.co.com/gbFgQd3F/amazon.png",
+    "location": "Seattle, WA",
+    "website": "https://www.amazon.com",
+    "industry": "E-commerce & Cloud",
+    "jobs": [
+      {
+        "id": "amz-job-001",
+        "title": "SDE I",
+        "bannerImage": "https://images.pexels.com/photos/1181315/pexels-photo-1181315.jpeg",
+        "location": "Seattle, USA",
+        "salary": "$130k-$170k",
+        "jobType": "Full-time",
+        "description": "Join Amazon and work on large-scale distributed systems.",
+        "requirements": [
+          "Expert in Java or Python",
+          "Experience in AWS",
+          "Strong debugging skills",
+          "Experience building scalable systems"
+        ]
+      },
+      {
+        "id": "amz-job-002",
+        "title": "DevOps Engineer",
+        "bannerImage": "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg",
+        "location": "Texas, USA",
+        "salary": "$115k-$140k",
+        "jobType": "Full-time",
+        "description": "Manage and automate cloud infrastructure.",
+        "requirements": [
+          "Experience with CI/CD",
+          "Terraform / CloudFormation",
+          "Linux administration",
+          "AWS expertise"
+        ]
+      },
+      {
+        "id": "amz-job-003",
+        "title": "Data Analyst",
+        "bannerImage": "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg",
+        "location": "Remote",
+        "salary": "$90k-$120k",
+        "jobType": "Full-time",
+        "description": "Analyze e-commerce data to drive business insights.",
+        "requirements": [
+          "SQL and data querying",
+          "Data visualization tools",
+          "Statistical analysis",
+          "Business intelligence"
+        ]
+      },
+      {
+        "id": "amz-job-004",
+        "title": "Technical Program Manager",
+        "bannerImage": "https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg",
+        "location": "Seattle, USA",
+        "salary": "$140k-$180k",
+        "jobType": "Full-time",
+        "description": "Manage complex technical projects across teams.",
+        "requirements": [
+          "Project management experience",
+          "Technical background",
+          "Cross-functional collaboration",
+          "Risk management skills"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Meta",
+    "logo": "https://i.ibb.co.com/8nHRKD5D/meta.jpg",
+    "location": "Menlo Park, CA",
+    "website": "https://www.meta.com",
+    "industry": "Technology & Social Media",
+    "jobs": [
+      {
+        "id": "meta-job-001",
+        "title": "React Native Engineer",
+        "bannerImage": "https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg",
+        "location": "Remote",
+        "salary": "$140k-$190k",
+        "jobType": "Full-time",
+        "description": "Build cross-platform mobile apps for billions of users.",
+        "requirements": [
+          "Strong React Native experience",
+          "JavaScript/TypeScript proficiency",
+          "Experience with mobile debugging",
+          "Pixel-perfect UI implementation"
+        ]
+      },
+      {
+        "id": "meta-job-002",
+        "title": "AI Research Scientist",
+        "bannerImage": "https://images.pexels.com/photos/3861974/pexels-photo-3861974.jpeg",
+        "location": "Menlo Park, CA",
+        "salary": "$180k-$250k",
+        "jobType": "Full-time",
+        "description": "Conduct cutting-edge AI research for social platforms.",
+        "requirements": [
+          "PhD in Computer Science or related",
+          "Deep learning expertise",
+          "Research publication record",
+          "Python and PyTorch/TensorFlow"
+        ]
+      },
+      {
+        "id": "meta-job-003",
+        "title": "Security Engineer",
+        "bannerImage": "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg",
+        "location": "Remote",
+        "salary": "$150k-$200k",
+        "jobType": "Full-time",
+        "description": "Protect user data and platform security.",
+        "requirements": [
+          "Cybersecurity knowledge",
+          "Network security protocols",
+          "Incident response experience",
+          "Security assessment skills"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "name": "Netflix",
+    "logo": "https://i.ibb.co.com/Hpxt4g6w/netliflix.jpg",
+    "location": "Los Gatos, CA",
+    "website": "https://www.netflix.com",
+    "industry": "Entertainment",
+    "jobs": [
+      {
+        "id": "nfx-job-001",
+        "title": "Backend Engineer",
+        "bannerImage": "https://images.pexels.com/photos/3861966/pexels-photo-3861966.jpeg",
+        "location": "USA (Remote)",
+        "salary": "$180k-$350k",
+        "jobType": "Full-time",
+        "description": "Build backend systems that deliver Netflix globally.",
+        "requirements": [
+          "Strong Java or Node.js",
+          "Distributed systems experience",
+          "Strong database knowledge",
+          "AWS/GCP cloud experience"
+        ]
+      },
+      {
+        "id": "nfx-job-002",
+        "title": "Content Strategist",
+        "bannerImage": "https://images.pexels.com/photos/2698075/pexels-photo-2698075.jpeg",
+        "location": "Los Angeles, USA",
+        "salary": "$100k-$140k",
+        "jobType": "Full-time",
+        "description": "Develop content strategies for global audiences.",
+        "requirements": [
+          "Content strategy experience",
+          "Market research skills",
+          "Analytical thinking",
+          "Creative content planning"
+        ]
+      },
+      {
+        "id": "nfx-job-003",
+        "title": "iOS Engineer",
+        "bannerImage": "https://images.pexels.com/photos/3861971/pexels-photo-3861971.jpeg",
+        "location": "Remote",
+        "salary": "$160k-$220k",
+        "jobType": "Full-time",
+        "description": "Develop the Netflix iOS application.",
+        "requirements": [
+          "Swift and Objective-C",
+          "iOS SDK expertise",
+          "UI/UX implementation",
+          "Performance optimization"
+        ]
+      },
+      {
+        "id": "nfx-job-004",
+        "title": "Data Engineer",
+        "bannerImage": "https://images.pexels.com/photos/3861933/pexels-photo-3861933.jpeg",
+        "location": "USA (Remote)",
+        "salary": "$150k-$200k",
+        "jobType": "Full-time",
+        "description": "Build data pipelines for content analytics.",
+        "requirements": [
+          "Spark and Hadoop",
+          "ETL pipeline development",
+          "Data warehousing",
+          "Python/Scala programming"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "name": "Apple",
+    "logo": "https://i.ibb.co.com/S4FBxtHh/apple.png",
+    "location": "Cupertino, CA",
+    "website": "https://www.apple.com",
+    "industry": "Consumer Technology",
+    "jobs": [
+      {
+        "id": "apple-job-001",
+        "title": "iOS Developer",
+        "bannerImage": "https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg",
+        "location": "California",
+        "salary": "$140k-$200k",
+        "jobType": "Full-time",
+        "description": "Develop iOS apps for millions of users.",
+        "requirements": [
+          "Swift & SwiftUI expertise",
+          "UIKit experience",
+          "Strong UI/UX fundamentals",
+          "REST API integration"
+        ]
+      },
+      {
+        "id": "apple-job-002",
+        "title": "Hardware Engineer",
+        "bannerImage": "https://images.pexels.com/photos/3861978/pexels-photo-3861978.jpeg",
+        "location": "Cupertino, CA",
+        "salary": "$130k-$180k",
+        "jobType": "Full-time",
+        "description": "Design next-generation Apple hardware.",
+        "requirements": [
+          "Electrical engineering background",
+          "PCB design experience",
+          "Hardware testing",
+          "Component selection knowledge"
+        ]
+      },
+      {
+        "id": "apple-job-003",
+        "title": "Machine Learning Engineer",
+        "bannerImage": "https://images.pexels.com/photos/3861974/pexels-photo-3861974.jpeg",
+        "location": "Remote",
+        "salary": "$150k-$220k",
+        "jobType": "Full-time",
+        "description": "Build ML models for Apple products and services.",
+        "requirements": [
+          "Python and ML frameworks",
+          "Deep learning experience",
+          "Model deployment knowledge",
+          "Research and development"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "name": "Tesla",
+    "logo": "https://i.ibb.co.com/M5JXbqb2/tesla.png",
+    "location": "Austin, Texas",
+    "website": "https://www.tesla.com",
+    "industry": "Automotive & AI",
+    "jobs": [
+      {
+        "id": "ts-job-001",
+        "title": "Autopilot Engineer",
+        "bannerImage": "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg",
+        "location": "Austin",
+        "salary": "$150k-$250k",
+        "jobType": "Full-time",
+        "description": "Develop next-gen autonomous driving systems.",
+        "requirements": [
+          "C++ and Python",
+          "Machine Learning experience",
+          "Linux expertise",
+          "Experience with robotics"
+        ]
+      },
+      {
+        "id": "ts-job-002",
+        "title": "Battery Engineer",
+        "bannerImage": "https://images.pexels.com/photos/3861980/pexels-photo-3861980.jpeg",
+        "location": "Nevada, USA",
+        "salary": "$120k-$170k",
+        "jobType": "Full-time",
+        "description": "Design and optimize battery systems for EVs.",
+        "requirements": [
+          "Electrochemical engineering",
+          "Battery technology knowledge",
+          "Materials science background",
+          "Testing and validation"
+        ]
+      },
+      {
+        "id": "ts-job-003",
+        "title": "Embedded Software Engineer",
+        "bannerImage": "https://images.pexels.com/photos/3861979/pexels-photo-3861979.jpeg",
+        "location": "Austin, Texas",
+        "salary": "$130k-$180k",
+        "jobType": "Full-time",
+        "description": "Develop firmware for vehicle control systems.",
+        "requirements": [
+          "C/C++ programming",
+          "Embedded systems experience",
+          "Real-time operating systems",
+          "Hardware-software integration"
+        ]
+      },
+      {
+        "id": "ts-job-004",
+        "title": "Manufacturing Engineer",
+        "bannerImage": "https://images.pexels.com/photos/3861982/pexels-photo-3861982.jpeg",
+        "location": "Fremont, CA",
+        "salary": "$110k-$150k",
+        "jobType": "Full-time",
+        "description": "Optimize automotive manufacturing processes.",
+        "requirements": [
+          "Manufacturing engineering",
+          "Process improvement",
+          "Automation systems",
+          "Quality control"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "name": "IBM",
+    "logo": "https://i.ibb.co.com/V0pfvVjQ/ibm.png",
+    "location": "New York, USA",
+    "website": "https://www.ibm.com",
+    "industry": "Enterprise Tech",
+    "jobs": [
+      {
+        "id": "ibm-job-001",
+        "title": "AI Engineer",
+        "bannerImage": "https://images.pexels.com/photos/1181318/pexels-photo-1181318.jpeg",
+        "location": "Remote",
+        "salary": "$100k-$140k",
+        "jobType": "Full-time",
+        "description": "Develop AI solutions using Watson and ML models.",
+        "requirements": [
+          "Python & Machine Learning",
+          "Deep Learning knowledge",
+          "REST API development",
+          "Model deployment experience"
+        ]
+      },
+      {
+        "id": "ibm-job-002",
+        "title": "Cloud Consultant",
+        "bannerImage": "https://images.pexels.com/photos/3184297/pexels-photo-3184297.jpeg",
+        "location": "New York, USA",
+        "salary": "$120k-$160k",
+        "jobType": "Full-time",
+        "description": "Advise enterprise clients on cloud migration.",
+        "requirements": [
+          "Cloud architecture knowledge",
+          "Consulting experience",
+          "Client communication skills",
+          "Multi-cloud platforms"
+        ]
+      },
+      {
+        "id": "ibm-job-003",
+        "title": "Quantum Computing Researcher",
+        "bannerImage": "https://images.pexels.com/photos/3861976/pexels-photo-3861976.jpeg",
+        "location": "Yorktown Heights, NY",
+        "salary": "$140k-$200k",
+        "jobType": "Full-time",
+        "description": "Research and develop quantum computing algorithms.",
+        "requirements": [
+          "Quantum mechanics background",
+          "PhD in Physics/Computer Science",
+          "Qiskit or similar framework",
+          "Research experience"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "name": "Spotify",
+    "logo": "https://i.ibb.co.com/gMr1WyCX/spotify.png",
+    "location": "Stockholm, Sweden",
+    "website": "https://www.spotify.com",
+    "industry": "Music Streaming",
+    "jobs": [
+      {
+        "id": "sp-job-001",
+        "title": "Product Designer",
+        "bannerImage": "https://images.pexels.com/photos/3184611/pexels-photo-3184611.jpeg",
+        "location": "Europe (Remote)",
+        "salary": "$100k-$140k",
+        "jobType": "Full-time",
+        "description": "Design intuitive experiences for millions of listeners.",
+        "requirements": [
+          "Figma expertise",
+          "UX research experience",
+          "Mobile UI design",
+          "Strong communication"
+        ]
+      },
+      {
+        "id": "sp-job-002",
+        "title": "Backend Engineer - Music Recommendations",
+        "bannerImage": "https://images.pexels.com/photos/3861967/pexels-photo-3861967.jpeg",
+        "location": "Stockholm, Sweden",
+        "salary": "$120k-$160k",
+        "jobType": "Full-time",
+        "description": "Build recommendation algorithms for music discovery.",
+        "requirements": [
+          "Python/Java programming",
+          "Machine learning algorithms",
+          "Big data processing",
+          "API development"
+        ]
+      },
+      {
+        "id": "sp-job-003",
+        "title": "Data Scientist - User Insights",
+        "bannerImage": "https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg",
+        "location": "Remote",
+        "salary": "$110k-$150k",
+        "jobType": "Full-time",
+        "description": "Analyze user behavior to improve music experience.",
+        "requirements": [
+          "Statistical analysis",
+          "A/B testing experience",
+          "SQL and Python",
+          "Data visualization"
+        ]
+      },
+      {
+        "id": "sp-job-004",
+        "title": "Android Developer",
+        "bannerImage": "https://images.pexels.com/photos/3861973/pexels-photo-3861973.jpeg",
+        "location": "Europe (Remote)",
+        "salary": "$100k-$140k",
+        "jobType": "Full-time",
+        "description": "Develop the Spotify Android application.",
+        "requirements": [
+          "Kotlin/Java Android development",
+          "Mobile app architecture",
+          "Performance optimization",
+          "UI/UX implementation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "name": "Airbnb",
+    "logo": "https://i.ibb.co.com/qvf8HqH/airbnb.png",
+    "location": "San Francisco, USA",
+    "website": "https://www.airbnb.com",
+    "industry": "Travel & Hospitality",
+    "jobs": [
+      {
+        "id": "ab-job-001",
+        "title": "Full Stack Developer",
+        "bannerImage": "https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg",
+        "location": "USA (Remote)",
+        "salary": "$120k-$180k",
+        "jobType": "Full-time",
+        "description": "Build features powering Airbnb's travel platform.",
+        "requirements": [
+          "React & Node.js",
+          "Strong API development",
+          "Database knowledge",
+          "Good teamwork"
+        ]
+      },
+      {
+        "id": "ab-job-002",
+        "title": "UX Researcher",
+        "bannerImage": "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg",
+        "location": "San Francisco, USA",
+        "salary": "$100k-$140k",
+        "jobType": "Full-time",
+        "description": "Research user needs for travel and hosting experiences.",
+        "requirements": [
+          "User research methods",
+          "Qualitative analysis",
+          "Prototype testing",
+          "Cross-cultural research"
+        ]
+      },
+      {
+        "id": "ab-job-003",
+        "title": "Trust & Safety Engineer",
+        "bannerImage": "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg",
+        "location": "Remote",
+        "salary": "$130k-$170k",
+        "jobType": "Full-time",
+        "description": "Build systems to ensure platform safety and security.",
+        "requirements": [
+          "Security engineering",
+          "Fraud detection systems",
+          "Machine learning applications",
+          "Risk assessment"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "name": "Uber",
+    "logo": "https://i.ibb.co.com/W4L4nz7k/uber.jpg",
+    "location": "San Francisco, USA",
+    "website": "https://www.uber.com",
+    "industry": "Transportation & Tech",
+    "jobs": [
+      {
+        "id": "ub-job-001",
+        "title": "Data Engineer",
+        "bannerImage": "https://images.pexels.com/photos/3861933/pexels-photo-3861933.jpeg",
+        "location": "USA",
+        "salary": "$130k-$170k",
+        "jobType": "Full-time",
+        "description": "Build real-time data pipelines.",
+        "requirements": [
+          "Python, SQL, Spark",
+          "ETL expertise",
+          "Data modeling",
+          "Cloud experience"
+        ]
+      },
+      {
+        "id": "ub-job-002",
+        "title": "Mobile Engineer - iOS",
+        "bannerImage": "https://images.pexels.com/photos/3861971/pexels-photo-3861971.jpeg",
+        "location": "San Francisco, USA",
+        "salary": "$140k-$190k",
+        "jobType": "Full-time",
+        "description": "Develop the Uber iOS application.",
+        "requirements": [
+          "Swift programming",
+          "iOS SDK expertise",
+          "Map integration experience",
+          "Performance optimization"
+        ]
+      },
+      {
+        "id": "ub-job-003",
+        "title": "Backend Engineer - Payments",
+        "bannerImage": "https://images.pexels.com/photos/3861968/pexels-photo-3861968.jpeg",
+        "location": "Remote",
+        "salary": "$140k-$180k",
+        "jobType": "Full-time",
+        "description": "Build secure payment processing systems.",
+        "requirements": [
+          "Java/Go programming",
+          "Payment systems knowledge",
+          "Security protocols",
+          "Distributed systems"
+        ]
+      },
+      {
+        "id": "ub-job-004",
+        "title": "Product Manager - Rider Experience",
+        "bannerImage": "https://images.pexels.com/photos/3184288/pexels-photo-3184288.jpeg",
+        "location": "San Francisco, USA",
+        "salary": "$150k-$200k",
+        "jobType": "Full-time",
+        "description": "Lead product development for rider-facing features.",
+        "requirements": [
+          "Product management experience",
+          "Data analysis skills",
+          "User-centered design",
+          "Stakeholder management"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "name": "Adobe",
+    "logo": "https://i.ibb.co.com/zHRt3qXh/adobe.png",
+    "location": "San Jose, CA",
+    "website": "https://www.adobe.com",
+    "industry": "Creative Software",
+    "jobs": [
+      {
+        "id": "adb-job-001",
+        "title": "UI Engineer",
+        "bannerImage": "https://images.pexels.com/photos/1181233/pexels-photo-1181233.jpeg",
+        "location": "Remote",
+        "salary": "$110k-$150k",
+        "jobType": "Full-time",
+        "description": "Create world-class interfaces for Adobe software.",
+        "requirements": [
+          "HTML, CSS, JS",
+          "Strong React experience",
+          "Animation frameworks",
+          "Good design sense"
+        ]
+      },
+      {
+        "id": "adb-job-002",
+        "title": "Machine Learning Engineer - Creative AI",
+        "bannerImage": "https://images.pexels.com/photos/3861974/pexels-photo-3861974.jpeg",
+        "location": "San Jose, CA",
+        "salary": "$140k-$190k",
+        "jobType": "Full-time",
+        "description": "Develop AI features for creative tools like Photoshop.",
+        "requirements": [
+          "Computer vision experience",
+          "Deep learning frameworks",
+          "Python/C++ programming",
+          "Creative applications"
+        ]
+      },
+      {
+        "id": "adb-job-003",
+        "title": "Product Designer - Creative Cloud",
+        "bannerImage": "https://images.pexels.com/photos/3184611/pexels-photo-3184611.jpeg",
+        "location": "Remote",
+        "salary": "$120k-$160k",
+        "jobType": "Full-time",
+        "description": "Design interfaces for professional creative software.",
+        "requirements": [
+          "UI/UX design portfolio",
+          "Creative software experience",
+          "Design systems",
+          "User research"
+        ]
+      },
+      {
+        "id": "adb-job-004",
+        "title": "Quality Assurance Engineer",
+        "bannerImage": "https://images.pexels.com/photos/3861983/pexels-photo-3861983.jpeg",
+        "location": "San Jose, CA",
+        "salary": "$90k-$130k",
+        "jobType": "Full-time",
+        "description": "Ensure quality and reliability of Adobe products.",
+        "requirements": [
+          "Testing methodologies",
+          "Automation frameworks",
+          "Bug tracking systems",
+          "Cross-platform testing"
+        ]
+      }
+    ]
+  }
+]

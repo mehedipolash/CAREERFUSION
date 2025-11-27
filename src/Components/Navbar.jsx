@@ -26,7 +26,7 @@ const Navbar = () => {
             to="/contactus"
             className={({ isActive }) => (isActive ? "text-primary" : "")}
           >
-            Contact Us
+            Contact
           </NavLink>
           <NavLink
             to="/signin"
@@ -46,7 +46,7 @@ const Navbar = () => {
         <div className="md:hidden flex flex-col gap-2 text-accent font-medium">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/about">About</NavLink>
-          <NavLink to="/contactus">Contact Us</NavLink>
+          <NavLink to="/contactus">Contact</NavLink>
           <NavLink to="/signin">SignIn</NavLink>
           <NavLink to="/signup">SignUp</NavLink>
         </div>

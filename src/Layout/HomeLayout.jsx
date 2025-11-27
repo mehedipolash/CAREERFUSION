@@ -28,7 +28,7 @@ const HomeLayout = () => {
         </section>
       </main>
       
-      <footer className="fixed bottom-0 left-0 right-0">
+      <footer>
         <Footer></Footer>
       </footer>
     </div>

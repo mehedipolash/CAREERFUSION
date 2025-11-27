@@ -3,12 +3,14 @@ import About from "../Pages/About";
 import HomeLayout from "../Layout/HomeLayout";
 import ErrorPage from "../Pages/ErrorPage";
 import AuthLayout from "../Layout/AuthLayout";
-import JobDetails from "../Pages/JobDetails";
 import ContactUs from "../Pages/ContactUs";
 import SignIn from "../Pages/SignIn";
 import Signup from "../Pages/Signup";
 import Home from "../Pages/Home";
-import JobNews from "../Pages/AllJobs";
+import CompanyDetails from "../Pages/CompanyDetails";
+import Loading from "../Components/Loading";
+
+
 
 const router = createBrowserRouter([
   {
@@ -17,7 +19,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />, // optional home page
+        element: <Home />, 
       },
       {
         path: "about",
@@ -28,9 +30,12 @@ const router = createBrowserRouter([
         element: <ContactUs />,
       },
       {
-        path: "job-details/:id",
-        element: <JobDetails />,
-      },
+        path:"/company-details/:id",
+        element:<CompanyDetails></CompanyDetails>,
+        loader: () => fetch("/Companies.json"),
+        hydrateFallbackElement: <Loading></Loading>,
+      }
+      
       
     ],
   },
