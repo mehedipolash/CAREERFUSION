@@ -8,9 +8,9 @@ const messages = [
   "📢 Amazon hiring SDE-II for multiple teams",
 ];
 
-const typingSpeed = 40;     // typing speed per letter
-const deleteSpeed = 25;     // speed when deleting
-const delayBetween = 1500;  // pause before removing
+const typingSpeed = 40; // typing speed per letter
+const deleteSpeed = 25; // speed when deleting
+const delayBetween = 1500; // pause before removing
 
 const LatestNews = () => {
   const [text, setText] = useState("");
@@ -44,7 +44,7 @@ const LatestNews = () => {
   }, [text, isDeleting, index]);
 
   return (
-    <div className="bg-base-200 p-4 rounded-lg shadow w-full sm:w-4/5 md:w-3/5 lg:w-2/5 mx-auto flex flex-col sm:flex-row items-center gap-4 mt-2">
+    <div className="bg-base-200 p-4 rounded-lg shadow w-full sm:w-2/5 md:w-3/5 lg:w-2/5 mx-auto flex flex-col sm:flex-row items-center gap-4 mt-2">
       <span className="bg-secondary text-white px-4 py-2 rounded font-semibold text-center sm:text-left">
         Latest
       </span>

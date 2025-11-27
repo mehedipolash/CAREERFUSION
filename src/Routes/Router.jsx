@@ -7,43 +7,51 @@ import JobDetails from "../Pages/JobDetails";
 import ContactUs from "../Pages/ContactUs";
 import SignIn from "../Pages/SignIn";
 import Signup from "../Pages/Signup";
+import Home from "../Pages/Home";
+import JobNews from "../Pages/AllJobs";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />, // optional home page
+      },
+      {
+        path: "about",
+        element: <About />,
+      },
+      {
+        path: "contactus",
+        element: <ContactUs />,
+      },
+      {
+        path: "job-details/:id",
+        element: <JobDetails />,
+      },
+      
+    ],
   },
-  {
-    path: "/about",
-    element: <About />,
-  },
-  {
-    path: "/contactus",
-    element:<ContactUs></ContactUs>
 
-  },
   {
     path: "/auth",
     element: <AuthLayout />,
   },
-  {
-    path: "/job-details",
-    element: <JobDetails />,
-  },
+
   {
     path: "/*",
     element: <ErrorPage />,
   },
   {
     path: "/signin",
-    element: <SignIn></SignIn> 
+    element: <SignIn></SignIn>,
   },
   {
     path: "/signup",
-    element: <Signup></Signup> 
+    element: <Signup></Signup>,
   },
-  {
-  }
 ]);
 
 export default router;
