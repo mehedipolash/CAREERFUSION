@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-base-200 shadow-md lg:px-4 py-3">
-      <p className="text-center">{user ? user.email : "user nai"}</p>
+      <p className="text-center">{user && user.email}</p>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo / Brand */}
         <div className="text-2xl font-bold text-accent">CareerFusion</div>

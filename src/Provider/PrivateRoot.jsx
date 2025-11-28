@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { use } from "react";
+import { AuthContext } from "./AuthProvider";
+import { Navigate, useLocation } from "react-router";
+import Loading from "../Components/Loading";
 
-const PrivateRoot = () => {
-    return (
-        <div>
-            <h2>This is privateRoot</h2>
-        </div>
-    );
+const PrivateRoot = ({ children }) => {
+  const { loading, setLoading, user } = use(AuthContext);
+  const location = useLocation();
+  console.log(location);
+
+  if (loading) {
+    return <Loading></Loading>;
+  }
+  if (user && user?.email) {
+    return children;
+  }
+
+  return <Navigate state={location.pathname} to="/auth/signin" />;
 };
 
 export default PrivateRoot;

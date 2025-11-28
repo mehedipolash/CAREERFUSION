@@ -11,6 +11,7 @@ import CompanyDetails from "../Pages/CompanyDetails";
 import Loading from "../Components/Loading";
 import OtherLayout from "../Layout/OtherLayout";
 import MyProfile from "../Pages/MyProfile";
+import PrivateRoot from "../Provider/PrivateRoot";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,11 @@ const router = createBrowserRouter([
 
       {
         path: "/company-details/:id",
-        element: <CompanyDetails></CompanyDetails>,
+        element: (
+          <PrivateRoot>
+            <CompanyDetails></CompanyDetails>
+          </PrivateRoot>
+        ),
         loader: () => fetch("/Companies.json"),
         hydrateFallbackElement: <Loading></Loading>,
       },

@@ -1,10 +1,14 @@
-import React, { use } from "react";
-import { Link } from "react-router";
+import React, { use, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import Header from "../Components/Header";
 
 const SignIn = () => {
   const { signIn } = use(AuthContext);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleSignIn = (event) => {
     event.preventDefault(); // prevent page reload
@@ -16,16 +20,17 @@ const SignIn = () => {
     signIn(email, password)
       .then((result) => {
         const user = result.user;
+        setSuccess(true);
         console.log(user);
+        navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {
-        alert(error);
+        setError(error);
       });
   };
 
   return (
     <div className="flex items-center justify-center min-h-screen px-4 bg-gray-400 rounded-3xl">
-      
       <div className="card bg-base-100 w-full max-w-sm shadow-2xl p-4">
         <h3 className="text-center text-3xl font-bold mb-5">Login now!</h3>
 
@@ -52,6 +57,8 @@ const SignIn = () => {
             <div>
               <a className="link link-hover">Forgot password?</a>
             </div>
+            {error && <p className="text-red-600 mt-2">{error.message}</p>}
+            {success && <p className="text-green-600 mt-2">Login Successful</p>}
 
             <button type="submit" className="btn btn-neutral mt-4 w-full">
               Login
