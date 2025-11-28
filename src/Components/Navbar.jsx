@@ -17,13 +17,13 @@ const Navbar = () => {
             Home
           </NavLink>
           <NavLink
-            to="/about"
+            to="/other/about"
             className={({ isActive }) => (isActive ? "text-primary" : "")}
           >
             About
           </NavLink>
           <NavLink
-            to="/contactus"
+            to="/other/contactus"
             className={({ isActive }) => (isActive ? "text-primary" : "")}
           >
             Contact
@@ -45,8 +45,8 @@ const Navbar = () => {
         {/* Mobile Menu */}
         <div className="md:hidden flex flex-col gap-2 text-accent font-medium">
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/about">About</NavLink>
-          <NavLink to="/contactus">Contact</NavLink>
+          <NavLink to="/other/about">About</NavLink>
+          <NavLink to="/other/contactus">Contact</NavLink>
           <NavLink to="/auth/signin">SignIn</NavLink>
           <NavLink to="/auth/signup">SignUp</NavLink>
         </div>

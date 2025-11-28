@@ -1,10 +1,16 @@
-import React from "react";
+import React, { use } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router";
+import Navbar from "../Components/Navbar";
+import { AuthContext } from "../Provider/AuthProvider";
+import { p } from "framer-motion/client";
 
 const About = () => {
+  const { user } = use(AuthContext);
+  console.log(user);
+
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, threshold: 0.1 });
 
@@ -65,6 +71,8 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-linear-to-br from-slate-50 to-blue-50">
+      <p>{user ? user.email : "user nai"}</p>
+
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-linear-to-r from-blue-600/10 to-purple-600/10"></div>

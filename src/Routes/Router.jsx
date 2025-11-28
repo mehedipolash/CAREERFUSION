@@ -9,6 +9,7 @@ import Signup from "../Pages/Signup";
 import Home from "../Pages/Home";
 import CompanyDetails from "../Pages/CompanyDetails";
 import Loading from "../Components/Loading";
+import OtherLayout from "../Layout/OtherLayout";
 
 const router = createBrowserRouter([
   {
@@ -43,18 +44,24 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/other",
+    element: <OtherLayout></OtherLayout>,
+    children: [
+      {
+        path: "/other/about",
+        element: <About />,
+      },
+      {
+        path: "/other/contactus",
+        element: <ContactUs />,
+      },
+    ],
+  },
 
   {
     path: "/*",
     element: <ErrorPage />,
-  },
-  {
-    path: "about",
-    element: <About />,
-  },
-  {
-    path: "contactus",
-    element: <ContactUs />,
   },
 ]);
 

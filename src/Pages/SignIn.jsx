@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 const SignIn = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen px-4">
+    <div className="flex items-center justify-center min-h-screen px-4 bg-gray-400 rounded-3xl">
       <div className="card bg-base-100 w-full max-w-sm shadow-2xl p-4">
         <h3 className="text-center text-3xl font-bold mb-5">Login now!</h3>
 
@@ -66,7 +66,7 @@ const SignIn = () => {
 
           <p className="mt-4 text-center">
             New to this site? Please{" "}
-            <Link to="/signup" className="text-sky-500 underline">
+            <Link to="/auth/signup" className="text-sky-500 underline">
               Register
             </Link>
           </p>
