@@ -10,6 +10,7 @@ import Home from "../Pages/Home";
 import CompanyDetails from "../Pages/CompanyDetails";
 import Loading from "../Components/Loading";
 import OtherLayout from "../Layout/OtherLayout";
+import MyProfile from "../Pages/MyProfile";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
         element: <CompanyDetails></CompanyDetails>,
         loader: () => fetch("/Companies.json"),
         hydrateFallbackElement: <Loading></Loading>,
+      },
+      {
+        path: "/my-profile",
+        element: <MyProfile></MyProfile>,
       },
     ],
   },

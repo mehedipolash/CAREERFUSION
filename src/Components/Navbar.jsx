@@ -44,27 +44,43 @@ const Navbar = () => {
           </NavLink>
 
           {user ? (
-            <button
-              onClick={handleSignOut}
-              className="btn btn-primary  mt-2 md:mt-0"
-            >
-              LogOut
-            </button>
-          ) : (
-            <Link
-              to="/auth/signin"
-              className="btn btn-primary mt-2 md:mt-0"
-            >
-              SignIn
-            </Link>
-          )}
+            <>
+              <button
+                onClick={handleSignOut}
+                className="btn btn-primary mt-2 md:mt-0 md:ml-2 self-start sm:self-start"
+              >
+                LogOut
+              </button>
 
-          <NavLink
-            to="/auth/signup"
-            className={({ isActive }) => (isActive ? "text-primary" : "")}
-          >
-            <button className="btn btn-primary mt-2 md:mt-0">SignUp</button>
-          </NavLink>
+              {/* User photo */}
+              {user.photoURL && (
+                <Link to="/user-profile" className="mt-2 md:mt-0 md:ml-2 self-start sm:self-start">
+                  <img
+                    src={user.photoURL}
+                    alt="User Profile"
+                    className="w-10 h-10 rounded-full border-2 border-primary object-cover"
+                  />
+                </Link>
+              )}
+            </>
+          ) : (
+            <>
+              <Link
+                to="/auth/signin"
+                className="btn btn-primary mt-2 md:mt-0 md:ml-2 self-start sm:self-start"
+              >
+                SignIn
+              </Link>
+              <NavLink
+                to="/auth/signup"
+                className={({ isActive }) => (isActive ? "text-primary" : "")}
+              >
+                <button className="btn btn-primary mt-2 md:mt-0 md:ml-2 self-start sm:self-start">
+                  SignUp
+                </button>
+              </NavLink>
+            </>
+          )}
         </div>
       </div>
     </nav>

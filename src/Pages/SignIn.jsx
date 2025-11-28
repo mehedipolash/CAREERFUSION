@@ -1,20 +1,43 @@
-import React from "react";
+import React, { use } from "react";
 import { Link } from "react-router";
+import { AuthContext } from "../Provider/AuthProvider";
+import Header from "../Components/Header";
 
 const SignIn = () => {
+  const { signIn } = use(AuthContext);
+
+  const handleSignIn = (event) => {
+    event.preventDefault(); // prevent page reload
+
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    signIn(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen px-4 bg-gray-400 rounded-3xl">
+      
       <div className="card bg-base-100 w-full max-w-sm shadow-2xl p-4">
         <h3 className="text-center text-3xl font-bold mb-5">Login now!</h3>
 
         <div className="card-body p-0">
-          <form className="fieldset">
+          <form className="fieldset" onSubmit={handleSignIn}>
             <label className="label">Email</label>
             <input
               name="email"
               type="email"
               className="input"
               placeholder="Email"
+              required
             />
 
             <label className="label">Password</label>
@@ -23,13 +46,16 @@ const SignIn = () => {
               type="password"
               className="input"
               placeholder="Password"
+              required
             />
 
             <div>
               <a className="link link-hover">Forgot password?</a>
             </div>
 
-            <button className="btn btn-neutral mt-4 w-full">Login</button>
+            <button type="submit" className="btn btn-neutral mt-4 w-full">
+              Login
+            </button>
           </form>
 
           {/* Login with Google */}
@@ -42,23 +68,23 @@ const SignIn = () => {
               viewBox="0 0 512 512"
             >
               <g>
-                <path fill="#fff" d="m0 0H512V512H0"></path>
+                <path fill="#fff" d="M0 0H512V512H0" />
                 <path
                   fill="#34a853"
                   d="M153 292c30 82 118 95 171 60h62v48A192 192 0 0190 341"
-                ></path>
+                />
                 <path
                   fill="#4285f4"
                   d="m386 400a140 175 0 0053-179H260v74h102q-7 37-38 57"
-                ></path>
+                />
                 <path
                   fill="#fbbc02"
                   d="m90 341a208 200 0 010-171l63 49q-12 37 0 73"
-                ></path>
+                />
                 <path
                   fill="#ea4335"
                   d="m153 219c22-69 116-109 179-50l55-54c-78-75-230-72-297 55"
-                ></path>
+                />
               </g>
             </svg>
             Login with Google
