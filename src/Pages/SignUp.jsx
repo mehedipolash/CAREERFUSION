@@ -1,13 +1,87 @@
+import { set } from "date-fns";
+import { use, useState } from "react";
 import { Link } from "react-router";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const SignUp = () => {
+  const { createUser,setUser } = use(AuthContext);
+  const [nameError, setNameError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [photoError, setPhotoError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [success, setSuccess] = useState(false);
+
+  const handleSignUp = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const photo = form.photo.value;
+    const password = form.password.value;
+
+    // Reset previous state
+    setSuccess(false);
+    setPasswordError("");
+    setNameError("");
+    setEmailError("");
+    setPhotoError("");
+
+    let hasError = false;
+    //name validation
+    if (name.length < 5) {
+      setNameError("Name must be at least 5 characters long.");
+      hasError = true;
+    }
+    // email validation
+    const emailRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegExp.test(email)) {
+      setEmailError("Please enter a valid email address.");
+      hasError = true;
+    }
+
+    // photo URL validation
+    const imgRegExp = /\.(jpeg|jpg|png|gif|webp|svg)$/i;
+    if (!imgRegExp.test(photo)) {
+      setPhotoError("Please enter a valid image URL.");
+      hasError = true;
+    }
+
+    //pasdsword validation
+    const passwordRegExp = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+
+    if (!passwordRegExp.test(password)) {
+      setPasswordError(
+        "Use 1 uppercase, 1 lowercase, and at least 6 characters."
+      );
+      hasError = true;
+    }
+    if (hasError) {
+      return;
+    }
+
+    // If success
+    setSuccess(true);
+
+    // Create user with email and password
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen px-4 bg-gray-400 rounded-3xl">
       <div className="card bg-base-100 w-full max-w-sm shadow-2xl p-4">
         <h3 className="text-center text-3xl font-bold mb-5">Register here!</h3>
 
         <div className="card-body p-0">
-          <form className="fieldset">
+          <form onSubmit={handleSignUp} className="fieldset">
+            {/* Name */}
             <label className="label">Name</label>
             <input
               name="name"
@@ -15,7 +89,9 @@ const SignUp = () => {
               className="input"
               placeholder="Name"
             />
+            {nameError && <p className="text-red-500 text-sm">{nameError}</p>}
 
+            {/* Email */}
             <label className="label">Email</label>
             <input
               name="email"
@@ -23,15 +99,19 @@ const SignUp = () => {
               className="input"
               placeholder="Email"
             />
+            {emailError && <p className="text-red-500 text-sm">{emailError}</p>}
+
+            {/* Photo */}
             <label className="label">Photo URL</label>
             <input
               type="text"
               name="photo"
               className="input"
-              placeholder="photoUrl"
-              required
+              placeholder="Photo URL"
             />
+            {photoError && <p className="text-red-500 text-sm">{photoError}</p>}
 
+            {/* Password */}
             <label className="label">Password</label>
             <input
               name="password"
@@ -39,9 +119,20 @@ const SignUp = () => {
               className="input"
               placeholder="Password"
             />
+            {passwordError && (
+              <p className="text-red-500 text-sm">{passwordError}</p>
+            )}
 
-            <button className="btn btn-neutral mt-4 w-full">Register</button>
+            <button type="submit" className="btn btn-neutral mt-4 w-full">
+              Register
+            </button>
           </form>
+          {/* Success Message */}
+          {success && (
+            <p className="text-green-600 text-center">
+              User has created Successfully
+            </p>
+          )}
           {/* Login with Google */}
           <button className="btn bg-white text-black border-[#e5e5e5] w-full mt-4">
             <svg
@@ -73,7 +164,6 @@ const SignUp = () => {
             </svg>
             SignUp with Google
           </button>
-
           <p className="mt-4 text-center">
             Already have an account?{" "}
             <Link to="/auth/signin" className="text-sky-500 underline">
