@@ -8,8 +8,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { p } from "framer-motion/client";
 
 const About = () => {
-  const { user } = use(AuthContext);
-  console.log(user);
+  
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, threshold: 0.1 });
@@ -71,7 +70,7 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-linear-to-br from-slate-50 to-blue-50">
-      <p>{user ? user.email : "user nai"}</p>
+      
 
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">

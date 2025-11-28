@@ -5,7 +5,7 @@ import ErrorPage from "../Pages/ErrorPage";
 import AuthLayout from "../Layout/AuthLayout";
 import ContactUs from "../Pages/ContactUs";
 import SignIn from "../Pages/SignIn";
-import Signup from "../Pages/Signup";
+import Signup from "../Pages/SignUp";
 import Home from "../Pages/Home";
 import CompanyDetails from "../Pages/CompanyDetails";
 import Loading from "../Components/Loading";

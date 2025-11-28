@@ -7,7 +7,7 @@ import CareerTips from "../Components/CareerTips.jsx";
 const Home = () => {
   return (
     <div>
-      <h2 className="text-center">Home page</h2>
+      
       <section>
         <Hero></Hero>
       </section>
