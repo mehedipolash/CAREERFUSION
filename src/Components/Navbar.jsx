@@ -15,6 +15,9 @@ const Navbar = () => {
       });
   };
 
+  // Default profile photo URL (you can use any default image)
+  const defaultProfilePhoto = "https://cdn-icons-png.flaticon.com/512/149/149071.png";
+
   return (
     <nav className="bg-base-200 shadow-md lg:px-4 py-3">
       <p className="text-center">{user && user.email}</p>
@@ -52,16 +55,18 @@ const Navbar = () => {
                 LogOut
               </button>
 
-              {/* User photo */}
-              {user.photoURL && (
-                <Link to="/user-profile" className="mt-2 md:mt-0 md:ml-2 self-start sm:self-start">
-                  <img
-                    src={user.photoURL}
-                    alt="User Profile"
-                    className="w-10 h-10 rounded-full border-2 border-primary object-cover"
-                  />
-                </Link>
-              )}
+              {/* User photo - always show, use default if no photoURL */}
+              <Link
+                to="/my-profile"
+                tabIndex={-1}
+                className="mt-2 md:mt-0 md:ml-2 self-start sm:self-start"
+              >
+                <img
+                  src={user.photoURL || defaultProfilePhoto}
+                  alt="User Profile"
+                  className="w-10 h-10 rounded-full border-2 border-primary object-cover"
+                />
+              </Link>
             </>
           ) : (
             <>
