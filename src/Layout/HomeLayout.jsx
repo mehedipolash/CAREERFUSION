@@ -11,6 +11,7 @@ const HomeLayout = () => {
     <div className="min-h-screen">
       <header>
         <Header></Header>
+        {import.meta.env.VITE_name}
         <section>
           <LatestNews></LatestNews>
         </section>
