@@ -1,10 +1,11 @@
-import React, { use, useState } from "react";
+import React, { use, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import Header from "../Components/Header";
+import { sendPasswordResetEmail } from "firebase/auth";
 
 const SignIn = () => {
-  const { signIn, googleSignUp } = use(AuthContext);
+  const { signIn, googleSignUp,auth } = use(AuthContext);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
   const location = useLocation();
@@ -38,7 +39,25 @@ const SignIn = () => {
       .catch((error) => {
         console.log(error);
       });
+  };
 
+  const emailRef = useRef();
+
+  const handleForgetPassword = () => {
+    // console.log(emailRef.current.value);
+    const email = emailRef.current.value;
+
+    setError("");
+
+    
+    // send password reset email
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        alert("a password reset email sent .please check your inbox.");
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
   };
 
   return (
@@ -54,6 +73,7 @@ const SignIn = () => {
               type="email"
               className="input"
               placeholder="Email"
+              ref={emailRef}
               required
             />
 
@@ -66,7 +86,7 @@ const SignIn = () => {
               required
             />
 
-            <div>
+            <div onClick={handleForgetPassword}>
               <a className="link link-hover">Forgot password?</a>
             </div>
             {error && <p className="text-red-600 mt-2">{error.message}</p>}
