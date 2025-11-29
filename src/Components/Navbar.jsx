@@ -16,11 +16,11 @@ const Navbar = () => {
   };
 
   // Default profile photo URL (you can use any default image)
-  const defaultProfilePhoto = "https://cdn-icons-png.flaticon.com/512/149/149071.png";
+  const defaultProfilePhoto =
+    "https://cdn-icons-png.flaticon.com/512/149/149071.png";
 
   return (
     <nav className="bg-base-200 shadow-md lg:px-4 py-3">
-      <p className="text-center">{user && user.email}</p>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo / Brand */}
         <div className="text-2xl font-bold text-accent">CareerFusion</div>
@@ -52,7 +52,7 @@ const Navbar = () => {
                 onClick={handleSignOut}
                 className="btn btn-primary mt-2 md:mt-0 md:ml-2 self-start sm:self-start"
               >
-                LogOut
+                Logout
               </button>
 
               {/* User photo - always show, use default if no photoURL */}

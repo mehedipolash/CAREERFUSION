@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const SignUp = () => {
-  const { createUser, setUser, updateUser } = use(AuthContext);
+  const { createUser, setUser, updateUser, googleSignUp } = use(AuthContext);
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [photoError, setPhotoError] = useState("");
@@ -87,6 +87,17 @@ const SignUp = () => {
       });
   };
 
+  const handleGoogleSignUp = () => {
+    googleSignUp()
+      .then((result) => {
+        console.log(result.user);
+        navigate(location?.state || "/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen px-4 bg-gray-400 rounded-3xl">
       <div className="card bg-base-100 w-full max-w-sm shadow-2xl p-4">
@@ -147,7 +158,10 @@ const SignUp = () => {
             </p>
           )}
           {/* Login with Google */}
-          <button className="btn bg-white text-black border-[#e5e5e5] w-full mt-4">
+          <button
+            onClick={handleGoogleSignUp}
+            className="btn bg-white text-black border-[#e5e5e5] w-full mt-4"
+          >
             <svg
               aria-label="Google logo"
               width="16"

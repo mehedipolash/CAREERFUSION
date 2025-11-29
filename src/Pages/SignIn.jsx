@@ -4,16 +4,16 @@ import { AuthContext } from "../Provider/AuthProvider";
 import Header from "../Components/Header";
 
 const SignIn = () => {
-  const { signIn } = use(AuthContext);
+  const { signIn, googleSignUp } = use(AuthContext);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
-  const handleSignIn = (event) => {
-    event.preventDefault(); // prevent page reload
+  const handleSignIn = (e) => {
+    e.preventDefault(); // prevent page reload
 
-    const form = event.target;
+    const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
 
@@ -27,6 +27,18 @@ const SignIn = () => {
       .catch((error) => {
         setError(error);
       });
+  };
+
+  const handleGoogleLogin = () => {
+    googleSignUp()
+      .then((result) => {
+        console.log(result.user);
+        navigate(location?.state || "/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
   };
 
   return (
@@ -66,7 +78,10 @@ const SignIn = () => {
           </form>
 
           {/* Login with Google */}
-          <button className="btn bg-white text-black border-[#e5e5e5] w-full mt-4">
+          <button
+            onClick={handleGoogleLogin}
+            className="btn bg-white text-black border-[#e5e5e5] w-full mt-4"
+          >
             <svg
               aria-label="Google logo"
               width="16"
