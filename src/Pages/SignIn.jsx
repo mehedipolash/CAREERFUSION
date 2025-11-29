@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import { sendPasswordResetEmail } from "firebase/auth";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const SignIn = () => {
   const { signIn, googleSignUp, auth } = use(AuthContext);
@@ -64,6 +65,9 @@ const SignIn = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen px-4 bg-gray-400 rounded-3xl">
+      <Helmet>
+        <title>SignIn | CareerFusion</title>
+      </Helmet>
       <div className="card bg-base-100 w-full max-w-sm shadow-2xl p-4">
         <h3 className="text-center text-3xl font-bold mb-5">Login now!</h3>
 

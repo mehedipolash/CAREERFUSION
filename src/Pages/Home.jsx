@@ -3,11 +3,14 @@ import Companies from "../Components/Companies";
 import Hero from "../Components/Hero";
 import FAQA from "../Components/FAQA.jsx";
 import CareerTips from "../Components/CareerTips.jsx";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   return (
     <div>
-      
+      <Helmet>
+        <title>Home | CareerFusion</title>
+      </Helmet>
       <section>
         <Hero></Hero>
       </section>

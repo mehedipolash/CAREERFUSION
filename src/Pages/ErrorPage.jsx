@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion"; // Import Framer Motion
 import { Link } from "react-router";
+import { Helmet } from "react-helmet";
 
 // Animation variants for structured animations [citation:9]
 const containerVariants = {
@@ -25,12 +26,16 @@ const itemVariants = {
 
 const ErrorPage = () => {
   return (
+    
     <motion.div
       className="min-h-screen bg-linear-to-br from-slate-50 to-slate-100 flex items-center justify-center px-4 sm:px-6 lg:px-8"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
+      <Helmet>
+        <title>ErrorPage|CareerFusion</title>
+      </Helmet>
       <div className="max-w-md w-full text-center">
         {/* Animated 404 Number */}
         <motion.div className="mb-8" variants={itemVariants}>

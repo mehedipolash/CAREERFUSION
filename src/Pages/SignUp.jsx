@@ -2,6 +2,7 @@ import React, { use, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const SignUp = () => {
   const { createUser, setUser, updateUser, googleSignUp } = use(AuthContext);
@@ -104,6 +105,9 @@ const SignUp = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen px-4 bg-gray-400 rounded-3xl">
+      <Helmet>
+        <title>SignUp | CareerFusion</title>
+      </Helmet>
       <div className="card bg-base-100 w-full max-w-sm shadow-2xl p-4">
         <h3 className="text-center text-3xl font-bold mb-5">Register here!</h3>
 

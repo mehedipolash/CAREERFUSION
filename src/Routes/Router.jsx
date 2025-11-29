@@ -12,6 +12,7 @@ import Loading from "../Components/Loading";
 import OtherLayout from "../Layout/OtherLayout";
 import MyProfile from "../Pages/MyProfile";
 import PrivateRoot from "../Provider/PrivateRoot";
+import UpdateProfile from "../Pages/UpdateProfile";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoot>
             <MyProfile></MyProfile>
+          </PrivateRoot>
+        ),
+      },
+      {
+        path: "/update-profile",
+        element: (
+          <PrivateRoot>
+            <UpdateProfile />
           </PrivateRoot>
         ),
       },

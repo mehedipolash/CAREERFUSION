@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router";
+import { Helmet } from "react-helmet";
 
 const Contact = () => {
   const ref = useRef(null);
@@ -69,7 +70,11 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-linear-to-br from-slate-50 to-blue-50 py-20">
-      {/* Hero Section */}
+      <Helmet>
+        <title>Contact | CareerFusion</title>
+      </Helmet>
+
+
 
       {/* Main Content */}
       <div ref={ref} className="max-w-7xl mx-auto px-4">

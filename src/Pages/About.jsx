@@ -6,6 +6,7 @@ import { Link } from "react-router";
 import Navbar from "../Components/Navbar";
 import { AuthContext } from "../Provider/AuthProvider";
 import { p } from "framer-motion/client";
+import { Helmet } from "react-helmet";
 
 const About = () => {
   
@@ -70,7 +71,9 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-linear-to-br from-slate-50 to-blue-50">
-      
+      <Helmet>
+        <title>About | CareerFusion</title>
+      </Helmet>
 
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
