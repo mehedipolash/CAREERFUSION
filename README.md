@@ -1,11 +1,10 @@
-
-
 # 🏢 CareerFusion – Job Portal Web App
 
 [Live Demo 🌐](https://careerfusion-44fab.web.app/)
 
-CareerFusion is a modern **job portal web application** built with **React**, **Firebase Authentication**, **React Router (Data API)**, **Tailwind CSS + DaisyUI**, and **Framer Motion**.
-It provides a user-friendly interface to explore companies, view job listings, and manage personal profiles securely.
+**CareerFusion** is a modern **job portal web application** built with **React**, **Firebase Authentication**, **React Router (Data API)**, **Tailwind CSS + DaisyUI**, and **Framer Motion**. It provides a user-friendly interface to explore companies, view job listings, and manage personal profiles securely.
+
+This project fulfills the **Assignment-09_category_Hibiscus** requirements with fully functional **login, registration, private routes, forget password, and update profile features**.
 
 ---
 
@@ -14,10 +13,10 @@ It provides a user-friendly interface to explore companies, view job listings, a
 | Icon | Technology                                 | Purpose                                                      |
 | ---- | ------------------------------------------ | ------------------------------------------------------------ |
 | ⚛️   | **React 19**                               | Core frontend library for building UI components             |
-| 🛣   | **React Router (Data API)**                | Client-side routing and dynamic route handling               |
+| 🛣    | **React Router (Data API)**                | Client-side routing and dynamic route handling               |
 | 🔐   | **Firebase Authentication**                | Secure user authentication (Email/Password + Google Sign-In) |
-| 🗄️  | **Firebase Firestore / Realtime Database** | Store user profiles and other dynamic data *(if applicable)* |
-| 🖼️  | **Firebase Hosting**                       | Host the production build online                             |
+| 🗄️   | **Firebase Firestore / Realtime Database** | Store user profiles and company/job data                     |
+| 🖼️   | **Firebase Hosting**                       | Host the production build online                             |
 | 🎨   | **Tailwind CSS + DaisyUI**                 | Utility-first styling and UI component library               |
 | 🎬   | **Framer Motion**                          | Smooth animations for modals, cards, and page transitions    |
 | 🧾   | **React Helmet / React Helmet Async**      | Dynamic document titles for SEO and UX                       |
@@ -26,39 +25,55 @@ It provides a user-friendly interface to explore companies, view job listings, a
 
 ---
 
-## 🚀 **Features**
+## 🚀 **Key Features**
 
 ### 🔐 Authentication
 
-* Register and Login using **Email & Password**
-* Login with **Google OAuth**
-* Secure logout functionality
-* Forgot password with **Firebase Email Reset**
+- Register and Login using **Email & Password**
+- Login with **Google OAuth**
+- **Forget password** functionality with Firebase email reset
+- Secure **logout** button displayed on navbar when logged in
+- Password validation:
+
+  - At least 6 characters
+  - Must contain an uppercase and lowercase letter
+
+- No email verification (skipped per assignment instructions)
 
 ### 🏢 Companies & Jobs
 
-* List of companies with **dynamic job listings**
-* Company detail page with **job information modal**
-* Animated UI for job cards using **Framer Motion**
-* Apply button redirecting to company website
+- List of companies with **dynamic job listings** from JSON
+- Company detail page (Private Route) with **job cards and modal**
+- Job modal includes:
+
+  - Title, Job Type, Salary, Description, Requirements
+  - **Apply button** redirecting to company website
+  - **Close button**
+
+- Animated UI for job cards using **Framer Motion**
 
 ### 👤 User Profile
 
-* View personal profile information (Name, Email, Photo, UID)
-* Update profile information (Name & Photo URL)
-* Profile picture defaults if not provided
+- **Private Route** – accessible only if logged in
+- View personal profile information (Name, Email, Photo, UID)
+- Update profile information (Name & Photo URL)
+- Default profile picture if not provided
+- Update info form with dedicated route
 
 ### 🌐 Routing
 
-* Public pages: Home, About, Contact Us
-* Private pages: Company Details, My Profile
-* Protected routes using **PrivateRoot**
+- **Public pages:** Home, About, Contact Us, Login, Register, Forget Password, 404
+- **Private pages:** Company Details, My Profile
+- Protected routes implemented with **PrivateRoot**
+- Navbar dynamically shows **login/register** or **profile picture + logout** depending on auth state
+- Dynamic document title per page using **React Helmet**
 
 ### 🛠️ Utilities
 
-* **Toast notifications** for feedback (login success, errors, profile updates)
-* Dynamic **document title per page** using React Helmet
-* Fully responsive layout with **Tailwind CSS & DaisyUI**
+- **Toast notifications** for login, errors, profile updates
+- Fully **responsive layout** with Tailwind CSS & DaisyUI
+- Smooth animations using **Framer Motion**
+- JSON-based dynamic data for companies and jobs
 
 ---
 
@@ -70,14 +85,96 @@ career-fusion/
 ├─ src/
 │  ├─ Components/            # Reusable UI components
 │  ├─ Layout/                # Layout wrappers (HomeLayout, AuthLayout, OtherLayout)
-│  ├─ Pages/                 # All pages (Home, MyProfile, SignIn, CompanyDetails)
-│  ├─ Provider/              # Context providers (AuthProvider, PrivateRoot)
+│  ├─ Pages/                 # Pages: Home, MyProfile, SignIn, CompanyDetails, Register, ForgetPassword
+│  ├─ Provider/              # Context providers: AuthProvider, PrivateRoot
 │  ├─ Routes/                # React Router setup
 │  └─ index.css              # Global styles
 ├─ package.json
 ├─ vite.config.js
 └─ README.md
 ```
+
+---
+
+## 📌 **JSON Data Example for Companies & Jobs**
+
+```json
+[
+  {
+    "id": "1",
+    "name": "Tech Solutions Ltd.",
+    "logo": "https://example.com/logo1.png",
+    "location": "Dhaka, Bangladesh",
+    "website": "https://techsolutions.com",
+    "industry": "Software Development",
+    "jobs": [
+      {
+        "id": "job-001",
+        "title": "Frontend Developer",
+        "bannerImage": "https://example.com/banner1.png",
+        "location": "Remote",
+        "salary": "$500-$800/month",
+        "jobType": "Full-time",
+        "description": "Develop and maintain the frontend of web applications.",
+        "requirements": [
+          "Proficient in HTML, CSS, JavaScript",
+          "Experience with React",
+          "Familiarity with RESTful APIs",
+          "Good understanding of responsive design",
+          "Problem-solving skills"
+        ]
+      }
+    ]
+  }
+]
+```
+
+---
+
+## 🏠 **Home Page Features**
+
+- **Hero Section:** Title, description, relevant hero image
+- **How It Works:** Step-by-step instructions
+- **Companies Section:** Display logos in a grid/flex layout; clickable to Company Details page
+- **Extra Sections:** Two additional relevant sections showcasing website functionality
+
+---
+
+## 👤 **Authentication Pages**
+
+### Login Page
+
+- Email & Password fields
+- Forget Password link
+- Login button
+- Google OAuth login button
+- Link to Register page
+- Error and success notifications using **React Hot Toast**
+
+### Register Page
+
+- Name, Email, Photo URL, Password
+- Register button
+- Google OAuth login
+- Password validation with inline errors
+- Redirect to Home on successful registration
+
+### Forget Password Page
+
+- Email field prefilled if coming from Login page
+- Reset button redirects to Gmail for password reset
+- Accessible via login link
+
+---
+
+## 📌 **Additional Features**
+
+- 404 / Not Found page
+- Extra route implemented (update profile)
+- Dynamic tab title per page
+- Fully responsive for **mobile, tablet, desktop**
+- Smooth animations using **Framer Motion**
+- Environment variables used for Firebase config
 
 ---
 
@@ -116,21 +213,10 @@ firebase deploy
 
 ---
 
-## 📌 **Live Demo**
-
-Check the project online:
-[https://careerfusion-44fab.web.app/](https://careerfusion-44fab.web.app/)
-
----
-
 ## 👨‍💻 **Author**
 
 **Md. Mehedi Hasan Polash**
+CSE Student, AIUB
 
-* CSE Student, AIUB
-* [LinkedIn](https://www.linkedin.com/in/md-mehedi-hasan-polash/)
-* [GitHub](https://github.com/yourusername)
-
----
-
-
+- [LinkedIn](https://www.linkedin.com/in/m-mehedi-hasan-polash)
+- [GitHub](https://github.com/mehedipolash)
