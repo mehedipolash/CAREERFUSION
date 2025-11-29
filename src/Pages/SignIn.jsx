@@ -1,18 +1,19 @@
 import React, { use, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
-import Header from "../Components/Header";
 import { sendPasswordResetEmail } from "firebase/auth";
+import toast from "react-hot-toast";
 
 const SignIn = () => {
-  const { signIn, googleSignUp,auth } = use(AuthContext);
+  const { signIn, googleSignUp, auth } = use(AuthContext);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const emailRef = useRef();
 
   const handleSignIn = (e) => {
-    e.preventDefault(); // prevent page reload
+    e.preventDefault();
 
     const form = e.target;
     const email = form.email.value;
@@ -20,43 +21,44 @@ const SignIn = () => {
 
     signIn(email, password)
       .then((result) => {
-        const user = result.user;
         setSuccess(true);
-        console.log(user);
-        navigate(`${location.state ? location.state : "/"}`);
+        toast.success("Login successful!");
+
+        navigate(location.state || "/");
       })
       .catch((error) => {
         setError(error);
+        toast.error(error.message);
       });
   };
 
   const handleGoogleLogin = () => {
     googleSignUp()
       .then((result) => {
-        console.log(result.user);
-        navigate(location?.state || "/");
+        toast.success("Logged in with Google!");
+        navigate(location.state || "/");
       })
       .catch((error) => {
-        console.log(error);
+        toast.error(error.message);
       });
   };
 
-  const emailRef = useRef();
-
   const handleForgetPassword = () => {
-    // console.log(emailRef.current.value);
     const email = emailRef.current.value;
-
     setError("");
 
-    
-    // send password reset email
+    if (!email) {
+      toast.error("Please enter your email first!");
+      return;
+    }
+
     sendPasswordResetEmail(auth, email)
       .then(() => {
-        alert("a password reset email sent .please check your inbox.");
+        toast.success("Reset email sent! Check your inbox.");
       })
       .catch((error) => {
         setError(error.message);
+        toast.error(error.message);
       });
   };
 
@@ -89,15 +91,13 @@ const SignIn = () => {
             <div onClick={handleForgetPassword}>
               <a className="link link-hover">Forgot password?</a>
             </div>
-            {error && <p className="text-red-600 mt-2">{error.message}</p>}
-            {success && <p className="text-green-600 mt-2">Login Successful</p>}
 
             <button type="submit" className="btn btn-neutral mt-4 w-full">
               Login
             </button>
           </form>
 
-          {/* Login with Google */}
+          {/* Google Login */}
           <button
             onClick={handleGoogleLogin}
             className="btn bg-white text-black border-[#e5e5e5] w-full mt-4"

@@ -4,10 +4,12 @@ import "./index.css";
 import { RouterProvider } from "react-router";
 import router from "./Routes/Router";
 import AuthProvider from "./Provider/AuthProvider";
+import { Toaster } from "react-hot-toast";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthProvider>
+       <Toaster position="top-right" />
       <RouterProvider router={router} />
     </AuthProvider>
   </StrictMode>

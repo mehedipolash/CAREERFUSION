@@ -1,15 +1,15 @@
-import { set } from "date-fns";
-import { use, useState } from "react";
+import React, { use, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const SignUp = () => {
   const { createUser, setUser, updateUser, googleSignUp } = use(AuthContext);
+
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [photoError, setPhotoError] = useState("");
   const [passwordError, setPasswordError] = useState("");
-  const [success, setSuccess] = useState(false);
 
   const navigate = useNavigate();
 
@@ -23,58 +23,61 @@ const SignUp = () => {
     const password = form.password.value;
 
     // Reset previous state
-    setSuccess(false);
-    setPasswordError("");
     setNameError("");
     setEmailError("");
     setPhotoError("");
+    setPasswordError("");
 
     let hasError = false;
-    //name validation
+
+    // Name validation
     if (name.length < 5) {
       setNameError("Name must be at least 5 characters long.");
+      toast.error("Name must be at least 5 characters long.");
       hasError = true;
     }
-    // email validation
+
+    // Email validation
     const emailRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegExp.test(email)) {
       setEmailError("Please enter a valid email address.");
+      toast.error("Please enter a valid email address.");
       hasError = true;
     }
 
-    // photo URL validation
+    // Photo URL validation
     const imgRegExp = /\.(jpeg|jpg|png|gif|webp|svg)$/i;
     if (!imgRegExp.test(photo)) {
       setPhotoError("Please enter a valid image URL.");
+      toast.error("Please enter a valid image URL.");
       hasError = true;
     }
 
-    //pasdsword validation
+    // Password validation
     const passwordRegExp = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
 
     if (!passwordRegExp.test(password)) {
       setPasswordError(
         "Use 1 uppercase, 1 lowercase, and at least 6 characters."
       );
+      toast.error("Invalid password format.");
       hasError = true;
     }
-    if (hasError) {
-      return;
-    }
 
-    // If success
-    setSuccess(true);
+    if (hasError) return;
 
     // Create user with email and password
     createUser(email, password)
       .then((result) => {
         const user = result.user;
+
         updateUser({
           displayName: name,
           photoURL: photo,
         })
           .then(() => {
             setUser({ ...user, displayName: name, photoURL: photo });
+            toast.success("Account created successfully!");
             navigate("/");
           })
           .catch((error) => {
@@ -83,18 +86,19 @@ const SignUp = () => {
           });
       })
       .catch((error) => {
-        alert(error);
+        toast.error(error.message);
       });
   };
 
+  // Google SignUp
   const handleGoogleSignUp = () => {
     googleSignUp()
       .then((result) => {
-        console.log(result.user);
-        navigate(location?.state || "/");
+        toast.success("Signed up with Google!");
+        navigate("/");
       })
       .catch((error) => {
-        console.log(error);
+        toast.error(error.message);
       });
   };
 
@@ -107,29 +111,19 @@ const SignUp = () => {
           <form onSubmit={handleSignUp} className="fieldset">
             {/* Name */}
             <label className="label">Name</label>
-            <input
-              name="name"
-              type="text"
-              className="input"
-              placeholder="Name"
-            />
+            <input name="name" type="text" className="input" placeholder="Name" />
             {nameError && <p className="text-red-500 text-sm">{nameError}</p>}
 
             {/* Email */}
             <label className="label">Email</label>
-            <input
-              name="email"
-              type="email"
-              className="input"
-              placeholder="Email"
-            />
+            <input name="email" type="email" className="input" placeholder="Email" />
             {emailError && <p className="text-red-500 text-sm">{emailError}</p>}
 
             {/* Photo */}
             <label className="label">Photo URL</label>
             <input
-              type="text"
               name="photo"
+              type="text"
               className="input"
               placeholder="Photo URL"
             />
@@ -151,46 +145,15 @@ const SignUp = () => {
               Register
             </button>
           </form>
-          {/* Success Message */}
-          {success && (
-            <p className="text-green-600 text-center">
-              User has created Successfully
-            </p>
-          )}
-          {/* Login with Google */}
+
+          {/* Google Login */}
           <button
             onClick={handleGoogleSignUp}
             className="btn bg-white text-black border-[#e5e5e5] w-full mt-4"
           >
-            <svg
-              aria-label="Google logo"
-              width="16"
-              height="16"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 512 512"
-            >
-              <g>
-                <path fill="#fff" d="m0 0H512V512H0"></path>
-                <path
-                  fill="#34a853"
-                  d="M153 292c30 82 118 95 171 60h62v48A192 192 0 0190 341"
-                ></path>
-                <path
-                  fill="#4285f4"
-                  d="m386 400a140 175 0 0053-179H260v74h102q-7 37-38 57"
-                ></path>
-                <path
-                  fill="#fbbc02"
-                  d="m90 341a208 200 0 010-171l63 49q-12 37 0 73"
-                ></path>
-                <path
-                  fill="#ea4335"
-                  d="m153 219c22-69 116-109 179-50l55-54c-78-75-230-72-297 55"
-                ></path>
-              </g>
-            </svg>
-            SignUp with Google
+            Sign Up with Google
           </button>
+
           <p className="mt-4 text-center">
             Already have an account?{" "}
             <Link to="/auth/signin" className="text-sky-500 underline">

@@ -49,7 +49,10 @@ const CompanyDetails = () => {
     </motion.div>
   );
 
-  const JobModal = ({ job }) => (
+ const JobModal = ({ job }) => {
+  const [imgLoading, setImgLoading] = useState(true);
+
+  return (
     <motion.dialog
       open
       className="modal modal-open"
@@ -64,13 +67,28 @@ const CompanyDetails = () => {
         exit={{ scale: 0.8 }}
         transition={{ duration: 0.25 }}
       >
-        <img
-          src={job.bannerImage}
-          alt={job.title}
-          className="w-full h-48 object-cover rounded"
-        />
+        {/* IMAGE LOADING WRAPPER */}
+        <div className="relative w-full h-48 overflow-hidden rounded">
+          {imgLoading && (
+            <div className="flex items-center justify-center absolute inset-0 bg-base-200 animate-pulse">
+              <span className="loading loading-bars loading-lg"></span>
+            </div>
+          )}
+
+          <img
+            src={job.bannerImage}
+            alt={job.title}
+            className={`w-full h-48 object-cover transition-opacity duration-300 ${
+              imgLoading ? "opacity-0" : "opacity-100"
+            }`}
+            onLoad={() => setImgLoading(false)}
+          />
+        </div>
+
+        {/* TITLE */}
         <h3 className="text-2xl font-bold mt-4">{job.title}</h3>
 
+        {/* JOB DETAILS */}
         <div className="mt-3 text-gray-700">
           <p>
             <strong>Location:</strong> {job.location}
@@ -83,8 +101,10 @@ const CompanyDetails = () => {
           </p>
         </div>
 
+        {/* DESCRIPTION */}
         <p className="mt-4 leading-relaxed">{job.description}</p>
 
+        {/* REQUIREMENTS */}
         <h4 className="text-lg font-semibold mt-4">Requirements:</h4>
         <ul className="list-disc ml-6 text-gray-700">
           {job.requirements.map((req, idx) => (
@@ -101,16 +121,15 @@ const CompanyDetails = () => {
           >
             Apply
           </a>
-          <button
-            onClick={() => setSelectedJob(null)}
-            className="btn btn-error"
-          >
+          <button onClick={() => setSelectedJob(null)} className="btn btn-error">
             Close
           </button>
         </div>
       </motion.div>
     </motion.dialog>
   );
+};
+
 
   return (
     <div className="w-11/12 mx-auto py-10">
