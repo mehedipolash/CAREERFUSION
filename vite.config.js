@@ -21,6 +21,24 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
-  // 💡 ADD THIS LINE: This ensures assets are loaded using relative paths (./assets/...)
-  base: './', 
+  // 💡 FINAL FIX: Use absolute root path for Firebase Hosting SPAs
+  base: '/', 
 })
+
+
+// vite.config.js
+
+// import { defineConfig } from 'vite'
+// import react from '@vitejs/plugin-react'
+// import tailwindcss from '@tailwindcss/vite'
+
+// // https://vitejs.dev/config/
+// export default defineConfig({
+//   // 💡 Final Fix: Use absolute path '/'
+//   base: '/', 
+  
+//   plugins: [
+//     react(),
+//     tailwindcss()
+//   ],
+// })
