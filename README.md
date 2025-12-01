@@ -77,59 +77,7 @@ This project fulfills the **Assignment-09_category_Hibiscus** requirements with 
 
 ---
 
-## 📁 **Project Structure**
 
-```
-career-fusion/
-├─ public/                   # Static assets
-├─ src/
-│  ├─ Components/            # Reusable UI components
-│  ├─ Layout/                # Layout wrappers (HomeLayout, AuthLayout, OtherLayout)
-│  ├─ Pages/                 # Pages: Home, MyProfile, SignIn, CompanyDetails, Register, ForgetPassword
-│  ├─ Provider/              # Context providers: AuthProvider, PrivateRoot
-│  ├─ Routes/                # React Router setup
-│  └─ index.css              # Global styles
-├─ package.json
-├─ vite.config.js
-└─ README.md
-```
-
----
-
-## 📌 **JSON Data Example for Companies & Jobs**
-
-```json
-[
-  {
-    "id": "1",
-    "name": "Tech Solutions Ltd.",
-    "logo": "https://example.com/logo1.png",
-    "location": "Dhaka, Bangladesh",
-    "website": "https://techsolutions.com",
-    "industry": "Software Development",
-    "jobs": [
-      {
-        "id": "job-001",
-        "title": "Frontend Developer",
-        "bannerImage": "https://example.com/banner1.png",
-        "location": "Remote",
-        "salary": "$500-$800/month",
-        "jobType": "Full-time",
-        "description": "Develop and maintain the frontend of web applications.",
-        "requirements": [
-          "Proficient in HTML, CSS, JavaScript",
-          "Experience with React",
-          "Familiarity with RESTful APIs",
-          "Good understanding of responsive design",
-          "Problem-solving skills"
-        ]
-      }
-    ]
-  }
-]
-```
-
----
 
 ## 🏠 **Home Page Features**
 
@@ -178,40 +126,7 @@ career-fusion/
 
 ---
 
-## ⚡ **Installation & Setup**
 
-1. Clone the repository:
-
-```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/career-fusion.git
-cd career-fusion
-```
-
-2. Install dependencies:
-
-```bash
-npm install
-```
-
-3. Start the development server:
-
-```bash
-npm run dev
-```
-
-4. Build for production:
-
-```bash
-npm run build
-```
-
-5. Deploy to Firebase Hosting:
-
-```bash
-firebase deploy
-```
-
----
 
 ## 👨‍💻 **Author**
 
